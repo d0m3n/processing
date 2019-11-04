@@ -1,0 +1,39 @@
+
+application:
+  version: 1.0.0
+
+processing:
+  input: c:\test\input
+  output:
+    success: c:\test\out
+    error: c:\test\error
+
+spring:
+  profiles:
+    active: dev
+  jpa:
+    properties:
+      javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        enable_lazy_load_no_trans: true
+        temp.use_jdbc_metadata_defaults: false
+        id.new_generator_mappings: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          log.non_contextual_creation: true
+          batch_size: 50
+          batch_versioned_data: true
+    #        cache:
+    #          use_second_level_cache: true
+    #          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+
+    hibernate:
+      ddl-auto: validate
+      bytecode:
+        use_reflection_optimizer: true
+        provider: javassist
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physical-strategy: be.better.at.processing.config.ProcessingPhysicalNamingStrategy

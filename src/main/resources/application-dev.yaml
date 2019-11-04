@@ -1,0 +1,12 @@
+spring:
+  application:
+    environment: dev
+  datasource:
+    url: jdbc:postgresql://localhost/better
+    driver-class-name: org.postgresql.Driver
+    username: better
+    password: better
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
