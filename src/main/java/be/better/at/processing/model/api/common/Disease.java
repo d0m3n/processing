@@ -11,6 +11,12 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class Disease {
 
+    private Long id;
+
     @NotNull(message = "Disease name must not be null")
     private String disease;
+
+    public Disease(@NotNull(message = "Disease name must not be null") String disease) {
+        this.disease = disease;
+    }
 }

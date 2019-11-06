@@ -18,9 +18,9 @@ public class ProcessDoctorInfoController {
     @Autowired
     private ProcessingService processingService;
 
-    @PostMapping(path = "/doctor", consumes = "application/json")
-    public ResponseEntity<Void> processDoctor(@RequestBody ProcessDoctorRequest request) {
-        log.info("Got request for processing.");
+    @PostMapping(path = "/doctor", consumes = { "application/json", "application/xml" })
+    public ResponseEntity<Void> processJson(@RequestBody ProcessDoctorRequest request) {
+        log.info("Got HTTP request for processing.");
         processingService.saveDoctorData(request);
         return ResponseEntity.noContent().build();
     }

@@ -2,11 +2,17 @@
 application:
   version: 1.0.0
 
+#processing:
+#  input: c:\test\input
+#  output:
+#    success: c:\test\out
+#    error: c:\test\error
+
 processing:
-  input: c:\test\input
+  input: /Users/domenkonda/test/input
   output:
-    success: c:\test\out
-    error: c:\test\error
+    success: /Users/domenkonda/test/out
+    error: /Users/domenkonda/test/error
 
 spring:
   profiles:
@@ -25,9 +31,6 @@ spring:
           log.non_contextual_creation: true
           batch_size: 50
           batch_versioned_data: true
-    #        cache:
-    #          use_second_level_cache: true
-    #          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
 
     hibernate:
       ddl-auto: validate
@@ -37,3 +40,6 @@ spring:
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
         physical-strategy: be.better.at.processing.config.ProcessingPhysicalNamingStrategy
+
+server:
+  port: 8020

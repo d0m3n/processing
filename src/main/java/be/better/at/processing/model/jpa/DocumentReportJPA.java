@@ -2,6 +2,7 @@ package be.better.at.processing.model.jpa;
 
 import be.better.at.processing.model.jpa.base.LongIdAuditJPA;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.envers.Audited;
@@ -17,6 +18,7 @@ import javax.persistence.Table;
 @Setter
 @ToString
 @Audited
+@NoArgsConstructor
 public class DocumentReportJPA extends LongIdAuditJPA {
 
     private long executionTime;
